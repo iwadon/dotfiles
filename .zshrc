@@ -56,8 +56,6 @@ case `uname -s` in
 	alias ls='ls -FG'
 	;;
 esac
-
-# jman
 if [ `uname -s` = "FreeBSD" ]; then
     alias jman='env LC_ALL=ja_JP.eucJP jman'
 fi
@@ -72,13 +70,16 @@ bindkey -e
 setopt append_history
 setopt auto_cd
 #setopt auto_list
+setopt auto_menu
 #setopt auto_param_keys
 #setopt auto_param_slash
 setopt auto_pushd
 #setopt auto_remove_slash
 #setopt auto_resume
 setopt no_clobber
-setopt correct
+setopt chase_links
+setopt correct_all
+setopt equals
 setopt extended_history
 setopt no_flow_control
 setopt ignore_eof
@@ -88,6 +89,7 @@ setopt list_types
 setopt long_list_jobs
 setopt magic_equal_subst
 setopt mark_dirs
+setopt notify
 setopt print_eightbit
 setopt print_exit_value
 setopt prompt_subst
@@ -109,7 +111,7 @@ precmd() {
 
 # backward-delete-word like tcsh
 tcsh-backward-delete-word () {
-    local WORDCHARS="#{WORDCHARS:s#/#}"
+    local WORDCHARS="${WORDCHARS:s#/#}"
     zle backward-delete-word
 }
 zle -N tcsh-backward-delete-word
@@ -126,4 +128,4 @@ if test -d $HOME/local/share/zsh/site-functions; then
     fpath=($HOME/local/share/zsh/site-functions ${fpath})
 fi
 autoload -U compinit
-compinit
+compinit -u
