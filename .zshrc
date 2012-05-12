@@ -122,8 +122,8 @@ test -f $HOME/.bundler-exec.sh && source $HOME/.bundler-exec.sh
 
 # zsh complete
 zstyle :compinstall filename '$HOME/.zshrc'
-if test -d $HOME/local/share/zsh/functions; then
-    fpath=($HOME/local/share/zsh/functions ${fpath})
+if test -d $HOME/local/share/zsh/site-functions; then
+    fpath=($HOME/local/share/zsh/site-functions ${fpath})
 fi
 autoload -U compinit
 compinit
