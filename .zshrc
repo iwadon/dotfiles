@@ -116,8 +116,8 @@ zle -N tcsh-backward-delete-word
 bindkey '^[^?' tcsh-backward-delete-word
 
 # Ruby
-/usr/bin/which -s rbenv && eval "$(rbenv init -)"
-/usr/bin/which -s hub && eval "$(hub alias -s)"
+whence rbenv && eval "$(rbenv init -)"
+whence hub && eval "$(hub alias -s)"
 test -f $HOME/.bundler-exec.sh && source $HOME/.bundler-exec.sh
 
 # zsh complete
