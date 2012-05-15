@@ -77,7 +77,7 @@ setopt auto_pushd
 #setopt auto_remove_slash
 #setopt auto_resume
 setopt no_clobber
-setopt chase_links
+#setopt chase_links
 setopt correct_all
 setopt equals
 setopt extended_history
