@@ -26,7 +26,7 @@ case `uname -s` in
 esac
 
 # PAGER
-if whence lv; then
+if [[ -x `whence -p lv` ]]; then
     PAGER=lv
     case `uname -s` in
 	CYGWIN*)
@@ -36,7 +36,7 @@ if whence lv; then
 	    LV="-c -Ou8"
 	    ;;
     esac
-elif whence jless; then
+elif [[ -x `whence -p jless` ]]; then
     PAGER=jless
 else
     PAGER=less
@@ -118,8 +118,8 @@ zle -N tcsh-backward-delete-word
 bindkey '^[^?' tcsh-backward-delete-word
 
 # Ruby
-whence rbenv && eval "$(rbenv init -)"
-whence hub && eval "$(hub alias -s)"
+[[ -x `whence -p rbenv` ]] && eval "$(rbenv init -)"
+[[ -x `whence -p hub` ]] && eval "$(hub alias -s)"
 test -f $HOME/.bundler-exec.sh && source $HOME/.bundler-exec.sh
 
 # zsh complete
