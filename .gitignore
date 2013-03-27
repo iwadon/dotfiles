@@ -1,3 +1,4 @@
 .emacs.d/*.elc
 .emacs.d/.cocoa-emacs-custom.el
+.emacs.d/ac-comphist.dat
 .emacs.d/auto-complete
