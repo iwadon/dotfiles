@@ -1,0 +1,3 @@
+.emacs.d/*.elc
+.emacs.d/.cocoa-emacs-custom.el
+.emacs.d/auto-complete
