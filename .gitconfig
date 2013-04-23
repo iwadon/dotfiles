@@ -1,0 +1,10 @@
+[user]
+	name = Hiroyuki Iwatsuki
+	email = don@na.rim.or.jp
+[color]
+	ui = true
+[alias]
+	co = checkout
+	ci = commit
+[push]
+	default = simple
