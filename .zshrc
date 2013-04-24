@@ -58,6 +58,7 @@ esac
 if [ `uname -s` = "FreeBSD" ]; then
     alias jman='env LC_ALL=ja_JP.eucJP jman'
 fi
+alias screen='screen -U'
 
 # node
 export NODE_PATH=$HOME/local/lib/node_modules
