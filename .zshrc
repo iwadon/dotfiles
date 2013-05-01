@@ -105,7 +105,7 @@ colors
 precmd() {
     case $TERM in
     *xterm*|rxvt|(dt|k|E)term)
-        print -Pn "\e]2;%n@%m:%~\a"
+        #print -Pn "\e]2;%n@%m:%~\a"
 	;;
     esac
 }
