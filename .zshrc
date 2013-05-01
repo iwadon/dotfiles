@@ -58,6 +58,7 @@ esac
 if [ `uname -s` = "FreeBSD" ]; then
     alias jman='env LC_ALL=ja_JP.eucJP jman'
 fi
+alias screen='screen -U'
 
 # node
 export NODE_PATH=$HOME/local/lib/node_modules
@@ -118,7 +119,14 @@ zle -N tcsh-backward-delete-word
 bindkey '^[^?' tcsh-backward-delete-word
 
 # Ruby
-export RBENV_ROOT=$HOME/local/opt/rbenv
+case `uname -s` in
+    FreeBSD)
+	export PATH=$HOME/.rbenv/bin:$PATH
+	;;
+    Darwin)
+	export RBENV_ROOT=$HOME/local/opt/rbenv
+	;;
+esac
 [[ -x `whence -p rbenv` ]] && eval "$(rbenv init -)"
 [[ -x `whence -p hub` ]] && eval "$(hub alias -s)"
 test -f $HOME/.bundler-exec.sh && source $HOME/.bundler-exec.sh
