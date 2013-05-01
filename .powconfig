@@ -1,2 +1,2 @@
 export HOME=/Users/don
-export PATH="$HOME/.rbenv/shims:$HOME/.rbenv/bin:$HOME/local/bin:$PATH"
+export PATH="$HOME/local/opt/rbenv/shims:$HOME/local/opt/rbenv/bin:$HOME/local/bin:$PATH"
