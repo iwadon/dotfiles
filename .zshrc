@@ -62,6 +62,7 @@ fi
 
 # node
 export NODE_PATH=$HOME/local/lib/node_modules
+PATH=/Users/don/local/share/npm/bin:$PATH
 
 # bindkey
 bindkey -e
