@@ -4,7 +4,6 @@ test -d /usr/games  && PATH=/usr/games:$PATH
 test -d /usr/X11R6  && PATH=/usr/X11R6/bin:$PATH
 test -d /opt/local  && PATH=/opt/local/bin:/opt/local/sbin:$PATH
 test -d /usr/local  && PATH=/usr/local/bin:/usr/local/sbin:$PATH
-test -d $HOME/.rbenv && PATH=$HOME/.rbenv/bin:$PATH
 test -d $HOME/local && PATH=$HOME/local/bin:$HOME/local/sbin:$PATH
 PROMPT='%m:%~%# '
 HISTFILE=$HOME/.zsh-history
@@ -119,6 +118,7 @@ zle -N tcsh-backward-delete-word
 bindkey '^[^?' tcsh-backward-delete-word
 
 # Ruby
+export RBENV_ROOT=$HOME/local/opt/rbenv
 [[ -x `whence -p rbenv` ]] && eval "$(rbenv init -)"
 [[ -x `whence -p hub` ]] && eval "$(hub alias -s)"
 test -f $HOME/.bundler-exec.sh && source $HOME/.bundler-exec.sh
