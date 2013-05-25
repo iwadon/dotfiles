@@ -2,7 +2,7 @@
 
 (add-to-list 'load-path "/usr/local/share/emacs/site-lisp")
 (add-to-list 'load-path "/opt/local/share/emacs/site-lisp")
-(add-to-list 'load-path "/Users/don/local/share/emacs/site-lisp")
+(add-to-list 'load-path "~/local/share/emacs/site-lisp")
 (add-to-list 'load-path "~/.emacs.d")
 
 (cond
