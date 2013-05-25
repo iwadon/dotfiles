@@ -1,4 +1,7 @@
-.emacs.d/*.elc
-.emacs.d/.*-custom.el
-.emacs.d/ac-comphist.dat
-.emacs.d/auto-complete
+*~
+.DS_Store
+.svn
+/.emacs.d/*.elc
+/.emacs.d/.*-custom.el
+/.emacs.d/ac-comphist.dat
+/.emacs.d/auto-complete
