@@ -1,5 +1,18 @@
 (setq custom-file "~/.emacs.d/.emacs24-custom.el")
 
+;; from http://detail.chiebukuro.yahoo.co.jp/qa/question_detail/q1497427004
+(coding-system-put 'utf-8-unix 'category 'utf-8-unix)
+(set-language-info
+ "Japanese"
+ 'coding-priority (cons 'utf-8-unix
+			(get-language-info "Japanese" 'coding-priority)))
+(set-language-environment "Japanese")
+(set-default-coding-systems 'utf-8-unix)
+(set-terminal-coding-system 'utf-8-unix)
+(set-keyboard-coding-system 'utf-8-unix)
+(set-buffer-file-coding-system 'utf-8-unix)
+(setq buffer-file-coding-system 'utf-8-unix)
+
 (blink-cursor-mode t)
 (column-number-mode t)
 ;(display-battery-mode t)
