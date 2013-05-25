@@ -9,4 +9,8 @@
 [push]
 	default = simple
 [core]
+	excludesfile = ~/.gitignore
+	quotepath = false
 	pager = lv -c -Ou8
+[include]
+	path = ~/.gitconfig.github
