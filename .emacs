@@ -2,7 +2,7 @@
 
 (add-to-list 'load-path "/usr/local/share/emacs/site-lisp")
 (add-to-list 'load-path "/opt/local/share/emacs/site-lisp")
-(add-to-list 'load-path "/Users/don/local/share/emacs/site-lisp")
+(add-to-list 'load-path "~/local/share/emacs/site-lisp")
 (add-to-list 'load-path "~/.emacs.d")
 
 (cond
@@ -22,6 +22,8 @@
   (load "~/.emacs.d/.carbon-emacs-package"))
  ((featurep 'xemacs)
   (load "~/.emacs.d/.xemacs.el"))
+ ((string-match "^24\\." emacs-version)
+  (load "~/.emacs.d/.emacs24.el"))
  ((string-match "^23\\." emacs-version)
   (load "~/.emacs.d/.emacs23.el"))
  ((string-match "^22\\." emacs-version)
