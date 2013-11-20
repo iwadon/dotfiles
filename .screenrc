@@ -1,0 +1,10 @@
+escape ^Tt
+attrcolor b ".I"
+defbce "on"
+term screen-256color
+#term xterm-256color
+startup_message off
+vbell off
+msgminwait 0
+autodetach on
+defscrollback 10000
