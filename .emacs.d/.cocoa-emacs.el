@@ -38,11 +38,30 @@
       (tool-bar-mode -1)
 
       ;; M+ (http://hanzubon.jp/node/282 の設定を参考にした)
-      (set-default-font "Ricty Discord-16")
-      (set-fontset-font (frame-parameter nil 'font) 'japanese-jisx0208 '("Ricty Discord" . "unicode-bmp"))
-      (set-fontset-font (frame-parameter nil 'font) 'katakana-jisx0201 '("Ricty Discord" . "unicode-bmp"))
-      (set-fontset-font (frame-parameter nil 'font) 'ascii '("Ricty Discord" . "unicode-bmp"))
-      ;; (set-fontset-font (frame-parameter nil 'font) 'unicode '("Ricty Discord" . "unicode-bmp"))
+      ;; (set-default-font "Ricty Discord-16")
+      ;; (set-fontset-font (frame-parameter nil 'font) 'japanese-jisx0208 '("Ricty Discord" . "unicode-bmp"))
+      ;; (set-fontset-font (frame-parameter nil 'font) 'katakana-jisx0201 '("Ricty Discord" . "unicode-bmp"))
+      ;; (set-fontset-font (frame-parameter nil 'font) 'ascii '("Ricty Discord" . "unicode-bmp"))
+      ;; ;; (set-fontset-font (frame-parameter nil 'font) 'unicode '("Ricty Discord" . "unicode-bmp"))
+
+      ;; http://d.hatena.ne.jp/eggtoothcroc/20130102/p1
+      ;; フォント
+      ;; abcdefghijklmnopqrstuvwxyz
+      ;; ABCDEFGHIJKLMNOPQRSTUVWXYZ
+      ;; `1234567890-=\[];',./
+      ;; ~!@#$%^&*()_+|{}:"<>?
+      ;;
+      ;; 壱弐参四五壱弐参四五壱弐参四五壱弐参四五壱弐参四五壱弐参四五
+      ;; 123456789012345678901234567890123456789012345678901234567890
+      ;; ABCdeＡＢＣｄｅ
+      ;;
+      ;; ┌─────────────────────────────┐
+      ;; │　　　　　　　　　　　　　罫線                            │
+      ;; └─────────────────────────────┘
+      ;;
+      (set-face-attribute 'default nil :family "Ricty Discord" :height 208)
+      (set-fontset-font nil 'japanese-jisx0208 (font-spec :family "Ricty"))
+      (setq face-font-rescale-alist '(("Ricty" . 1.08)))
 
       (add-to-list 'default-frame-alist '(alpha 85 50))
 
@@ -67,7 +86,7 @@
 ;	    (c-set-offset 'innamespace 0)   ; namespace { でインデントしない
 ;	    ))
 
-(load "~/.emacs.d/setup-auto-complete")
+;(load "~/.emacs.d/setup-auto-complete")
 
 ;; Local variables:
 ;; coding: iso-2022-jp-unix
