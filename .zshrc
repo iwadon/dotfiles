@@ -131,6 +131,11 @@ esac
 [[ -x `whence -p hub` ]] && eval "$(hub alias -s)"
 test -f $HOME/.bundler-exec.sh && source $HOME/.bundler-exec.sh
 
+# Homebrew
+if [[ -x `whence -p brew` ]]; then
+    export XML_CATALOG_FILES="`brew --prefix`/etc/xml/catalog"
+fi
+
 # zsh complete
 zstyle :compinstall filename '$HOME/.zshrc'
 if test -d $HOME/local/share/zsh/site-functions; then
