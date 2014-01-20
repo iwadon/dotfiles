@@ -98,6 +98,8 @@
 (add-to-list 'package-archives '("marmalade" . "http://marmalade-repo.org/packages/") t)
 (package-initialize)
 
+(load "init-csharp-mode")
+
 ;; Local variables:
 ;; coding: iso-2022-jp-unix
 ;; End:
