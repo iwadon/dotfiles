@@ -5,3 +5,5 @@
 /.emacs.d/.*-custom.el
 /.emacs.d/ac-comphist.dat
 /.emacs.d/auto-complete
+/.emacs.d/elpa
+/.emacs.d/url
