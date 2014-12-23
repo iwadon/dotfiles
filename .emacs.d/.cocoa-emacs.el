@@ -1,5 +1,3 @@
-(setq custom-file "~/.emacs.d/.cocoa-emacs-custom.el")
-
 (set-language-environment 'Japanese)
 (set-terminal-coding-system 'utf-8)
 (set-keyboard-coding-system 'utf-8)
@@ -64,7 +62,8 @@
       ;; │　　　　　　　　　　　　　罫線                            │
       ;; └─────────────────────────────┘
       ;;
-      (set-face-attribute 'default nil :family "Ricty Discord" :height 208)
+      ;;(set-face-attribute 'default nil :family "Ricty Discord" :height 208) ; iMac 27inch
+      (set-face-attribute 'default nil :family "Ricty Discord" :height 156) ; MacBook Pro with Retina display 15inch
       (set-fontset-font nil 'japanese-jisx0208 (font-spec :family "Ricty"))
       (setq face-font-rescale-alist '(("Ricty" . 1.08)))
 
@@ -99,6 +98,9 @@
 (package-initialize)
 
 (load "init-csharp-mode")
+
+(setq custom-file "~/.emacs.d/.cocoa-emacs-custom.el")
+(load custom-file)
 
 ;; Local variables:
 ;; coding: iso-2022-jp-unix
