@@ -42,9 +42,9 @@ else
 fi
 
 # bzr
-if [ `uname -s` = "Darwin" ]; then
-    PYTHONPATH=/Users/don/local/lib/python2.6/site-packages
-fi
+#if [ `uname -s` = "Darwin" ]; then
+#    PYTHONPATH=/Users/don/local/lib/python2.6/site-packages
+#fi
 
 # alias
 case `uname -s` in
