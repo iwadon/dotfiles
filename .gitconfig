@@ -14,3 +14,8 @@
 	pager = lv -c -Ou8
 [include]
 	path = ~/.gitconfig.github
+[filter "media"]
+	clean = git-media-clean %f
+	smudge = git-media-smudge %f
+[credential]
+	helper = osxkeychain
