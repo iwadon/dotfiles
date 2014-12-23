@@ -136,6 +136,10 @@ if [[ -x `whence -p brew` ]]; then
     export XML_CATALOG_FILES="`brew --prefix`/etc/xml/catalog"
 fi
 
+# Go Programming Language
+export GOPATH=$HOME/go
+export PATH=$PATH:`brew --prefix go`/libexec/bin
+
 # zsh complete
 zstyle :compinstall filename '$HOME/.zshrc'
 if test -d $HOME/local/share/zsh/site-functions; then
