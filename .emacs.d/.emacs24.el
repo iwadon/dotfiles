@@ -1,5 +1,3 @@
-(setq custom-file "~/.emacs.d/.emacs24-custom.el")
-
 ;; from http://detail.chiebukuro.yahoo.co.jp/qa/question_detail/q1497427004
 (coding-system-put 'utf-8-unix 'category 'utf-8-unix)
 (set-language-info
@@ -46,9 +44,16 @@
       (scroll-bar-mode nil)
       (tool-bar-mode nil)))
 
+(require 'package)
+(add-to-list 'package-archives '("melpa" . "http://melpa.milkbox.net/packages/") t)
+(add-to-list 'package-archives '("marmalade" . "http://marmalade-repo.org/packages/") t)
+(package-initialize)
+
 ;(load "setup-color-theme")
 
 ;(load "~/.emacs.d/.emacs24-custom")
+(setq custom-file "~/.emacs.d/.emacs24-custom.el")
+(load custom-file)
 
 ;; Local variables:
 ;; coding: iso-2022-jp-unix
