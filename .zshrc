@@ -137,8 +137,16 @@ if [[ -x `whence -p brew` ]]; then
 fi
 
 # Go Programming Language
-export GOPATH=$HOME/go
-export PATH=$PATH:`brew --prefix go`/libexec/bin
+if test -x $HOME/src/go/src/all.bash; then
+    export PATH=$PATH:$HOME/src/go/bin
+fi
+if test -d $HOME/go; then
+    export GOPATH=$HOME/go
+    export PATH=$PATH:$GOPATH/bin
+fi
+if [[ -x `whence -p brew` ]]; then
+    export PATH=$PATH:`brew --prefix go`/libexec/bin
+fi
 
 # zsh complete
 zstyle :compinstall filename '$HOME/.zshrc'
