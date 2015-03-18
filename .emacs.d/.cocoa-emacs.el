@@ -15,6 +15,7 @@
 (display-time-mode t)
 (global-font-lock-mode t)
 (iswitchb-mode t)
+;(icomplete-mode t)
 (line-number-mode t)
 (menu-bar-mode t)
 (show-paren-mode t)
@@ -62,10 +63,9 @@
       ;; │　　　　　　　　　　　　　罫線                            │
       ;; └─────────────────────────────┘
       ;;
-      ;;(set-face-attribute 'default nil :family "Ricty Discord" :height 208) ; iMac 27inch
-      (set-face-attribute 'default nil :family "Ricty Discord" :height 156) ; MacBook Pro with Retina display 15inch
-      (set-fontset-font nil 'japanese-jisx0208 (font-spec :family "Ricty"))
-      (setq face-font-rescale-alist '(("Ricty" . 1.08)))
+      (set-face-attribute 'default nil :family "Ricty Diminished Discord" :height 158)
+      (set-fontset-font nil 'japanese-jisx0208 (font-spec :family "Ricty Diminished Discord"))
+      (setq face-font-rescale-alist '(("Ricty Diminished Discord" . 1.08)))
 
       (add-to-list 'default-frame-alist '(alpha 85 50))
 
@@ -92,12 +92,18 @@
 
 ;(load "~/.emacs.d/setup-auto-complete")
 
-(require 'package)
-(add-to-list 'package-archives '("melpa" . "http://melpa.milkbox.net/packages/") t)
-(add-to-list 'package-archives '("marmalade" . "http://marmalade-repo.org/packages/") t)
-(package-initialize)
+;(require 'package)
+;(add-to-list 'package-archives '("melpa" . "http://melpa.milkbox.net/packages/") t)
+;(add-to-list 'package-archives '("marmalade" . "http://marmalade-repo.org/packages/") t)
+;(package-initialize)
 
-(load "init-csharp-mode")
+;(load "init-csharp-mode")
+
+(require 'setup-elpa)
+
+(setq custom-file "~/.emacs.d/.cocoa-emacs-custom.el")
+(if (file-exists-p (expand-file-name custom-file))
+    (load (expand-file-name custom-file) t nil nil))
 
 (setq custom-file "~/.emacs.d/.cocoa-emacs-custom.el")
 (load custom-file)
