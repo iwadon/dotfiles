@@ -98,6 +98,7 @@
 (package-initialize)
 
 (load "init-csharp-mode")
+(load "setup-powerline")
 
 (setq custom-file "~/.emacs.d/.cocoa-emacs-custom.el")
 (load custom-file)
