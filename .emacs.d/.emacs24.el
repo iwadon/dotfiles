@@ -1,5 +1,3 @@
-(setq custom-file "~/.emacs.d/.emacs24-custom.el")
-
 ;; from http://detail.chiebukuro.yahoo.co.jp/qa/question_detail/q1497427004
 (coding-system-put 'utf-8-unix 'category 'utf-8-unix)
 (set-language-info
@@ -18,7 +16,8 @@
 ;(display-battery-mode t)
 (display-time-mode t)
 (global-font-lock-mode t)
-(iswitchb-mode t)
+;;(iswitchb-mode t)
+(icomplete-mode t)
 (line-number-mode t)
 (menu-bar-mode nil)
 (show-paren-mode t)
@@ -46,9 +45,11 @@
       (scroll-bar-mode nil)
       (tool-bar-mode nil)))
 
-;(load "setup-color-theme")
+(require 'setup-elpa)
 
-;(load "~/.emacs.d/.emacs24-custom")
+(setq custom-file "~/.emacs.d/.emacs24-custom.el")
+(if (file-exists-p (expand-file-name custom-file))
+    (load (expand-file-name custom-file) t nil nil))
 
 ;; Local variables:
 ;; coding: iso-2022-jp-unix
