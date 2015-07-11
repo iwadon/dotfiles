@@ -97,10 +97,10 @@
 ;(add-to-list 'package-archives '("marmalade" . "http://marmalade-repo.org/packages/") t)
 ;(package-initialize)
 
+(require 'setup-elpa)
+
 ;(load "init-csharp-mode")
 (load "setup-powerline")
-
-(require 'setup-elpa)
 
 (setq custom-file "~/.emacs.d/.cocoa-emacs-custom.el")
 (if (file-exists-p (expand-file-name custom-file))
