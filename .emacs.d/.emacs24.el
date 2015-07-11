@@ -16,7 +16,8 @@
 ;(display-battery-mode t)
 (display-time-mode t)
 (global-font-lock-mode t)
-(iswitchb-mode t)
+;;(iswitchb-mode t)
+(icomplete-mode t)
 (line-number-mode t)
 (menu-bar-mode nil)
 (show-paren-mode t)
@@ -44,16 +45,11 @@
       (scroll-bar-mode nil)
       (tool-bar-mode nil)))
 
-(require 'package)
-(add-to-list 'package-archives '("melpa" . "http://melpa.milkbox.net/packages/") t)
-(add-to-list 'package-archives '("marmalade" . "http://marmalade-repo.org/packages/") t)
-(package-initialize)
+(require 'setup-elpa)
 
-;(load "setup-color-theme")
-
-;(load "~/.emacs.d/.emacs24-custom")
 (setq custom-file "~/.emacs.d/.emacs24-custom.el")
-(load custom-file)
+(if (file-exists-p (expand-file-name custom-file))
+    (load (expand-file-name custom-file) t nil nil))
 
 ;; Local variables:
 ;; coding: iso-2022-jp-unix
