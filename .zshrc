@@ -155,3 +155,8 @@ if test -d $HOME/local/share/zsh/site-functions; then
 fi
 autoload -U compinit
 compinit -u
+
+# zsh online help
+unalias run-help
+autoload run-help
+HELPDIR=$HOME/local/share/zsh/help
