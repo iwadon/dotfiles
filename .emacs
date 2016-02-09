@@ -2,7 +2,8 @@
 
 (add-to-list 'load-path "/usr/local/share/emacs/site-lisp")
 (add-to-list 'load-path "/opt/local/share/emacs/site-lisp")
-(add-to-list 'load-path "~/local/share/emacs/site-lisp")
+(let ((default-directory "~/local/share/emacs/site-lisp/"))
+    (normal-top-level-add-subdirs-to-load-path))
 (add-to-list 'load-path "~/.emacs.d/lisp")
 
 (cond
