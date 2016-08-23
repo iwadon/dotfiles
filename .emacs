@@ -23,6 +23,8 @@
   (load "~/.emacs.d/.carbon-emacs-package"))
  ((featurep 'xemacs)
   (load "~/.emacs.d/.xemacs.el"))
+ ((string-match "^25\\." emacs-version)
+  (load "~/.emacs.d/.emacs25.el"))
  ((string-match "^24\\." emacs-version)
   (load "~/.emacs.d/.emacs24.el"))
  ((string-match "^23\\." emacs-version)
