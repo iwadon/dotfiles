@@ -1,6 +1,10 @@
-(setq custom-file "~/.emacs.d/.emacs25-custom.el")
-(if (file-exists-p (expand-file-name custom-file))
-    (load (expand-file-name custom-file) t nil nil))
+(set-language-environment 'Japanese)
+(set-default-coding-systems 'utf-8)
+(set-terminal-coding-system 'utf-8)
+(set-keyboard-coding-system 'utf-8)
+(set-buffer-file-coding-system 'utf-8)
+(setq default-buffer-file-coding-system 'utf-8)
+(prefer-coding-system 'utf-8)
 
 (blink-cursor-mode t)
 (column-number-mode t)
@@ -9,10 +13,10 @@
 (iswitchb-mode t)
 (line-number-mode t)
 (menu-bar-mode -1)
-(scroll-bar-mode -1)
+;(scroll-bar-mode -1)
 (show-paren-mode t)
 (size-indication-mode t)
-(tool-bar-mode -1)
+;(tool-bar-mode -1)
 (transient-mark-mode t)
 
 (global-hl-line-mode t)
@@ -68,6 +72,10 @@
 (package-initialize)
 
 (load "init-auto-save-buffers")
+
+(setq custom-file "~/.emacs.d/.emacs25-custom.el")
+(if (file-exists-p (expand-file-name custom-file))
+    (load (expand-file-name custom-file) t nil nil))
 
 ;; Local variables:
 ;; coding: iso-2022-jp-unix
