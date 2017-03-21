@@ -1,5 +1,6 @@
 # env
 PATH=/usr/bin:/usr/sbin:/bin:/sbin
+test -x /usr/libexec/path_helper && eval `/usr/libexec/path_helper -s`
 test -d /usr/games  && PATH=/usr/games:$PATH
 test -d /usr/X11R6  && PATH=/usr/X11R6/bin:$PATH
 test -d /opt/local  && PATH=/opt/local/bin:/opt/local/sbin:$PATH
