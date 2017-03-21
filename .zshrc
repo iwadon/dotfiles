@@ -120,14 +120,7 @@ zle -N tcsh-backward-delete-word
 bindkey '^[^?' tcsh-backward-delete-word
 
 # Ruby
-case `uname -s` in
-    FreeBSD)
-	export PATH=$HOME/.rbenv/bin:$PATH
-	;;
-    Darwin)
-	export RBENV_ROOT=$HOME/local/opt/rbenv
-	;;
-esac
+export PATH=$HOME/.rbenv/bin:$PATH
 [[ -x `whence -p rbenv` ]] && eval "$(rbenv init -)"
 [[ -x `whence -p hub` ]] && eval "$(hub alias -s)"
 test -f $HOME/.bundler-exec.sh && source $HOME/.bundler-exec.sh
