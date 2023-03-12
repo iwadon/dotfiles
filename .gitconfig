@@ -1,5 +1,5 @@
 [user]
-	name = Hiroyuki Iwatsuki
+	name = IWATSUKI Hiroyuki
 	email = don@na.rim.or.jp
 [color]
 	ui = true
@@ -17,3 +17,12 @@
 [filter "media"]
 	clean = git-media-clean %f
 	smudge = git-media-smudge %f
+[init]
+	defaultBranch = master
+[pull]
+	rebase = false
+[filter "lfs"]
+	process = git-lfs filter-process
+	required = true
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
