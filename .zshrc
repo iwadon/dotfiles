@@ -68,6 +68,9 @@ fi
 autoload -U compinit
 compinit -u
 
+# homebrew
+test -x /opt/homebrew/bin/brew && eval $(/opt/homebrew/bin/brew shellenv)
+
 # user local
 PATH=$HOME/local/bin:$HOME/local/sbin:$PATH
 
