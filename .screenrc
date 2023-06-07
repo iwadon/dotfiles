@@ -1,6 +1,8 @@
 escape ^Tt
 attrcolor b ".I"
 defbce "on"
+termcapinfo xterm ti@:te@
+termcapinfo xterm-color ti@:te@
 term screen-256color
 #term xterm-256color
 startup_message off
@@ -8,3 +10,9 @@ vbell off
 msgminwait 0
 autodetach on
 defscrollback 10000
+cjkwidth off
+hardstatus alwayslastline
+hardstatus string '%{gk}[%{G}%H%{g}][%= %{wk}%?%-Lw%?%{=b kR}(%{W}%n*%f %t%?(%u)%?%{=b kR})%{= kw}%?%+Lw%?%?%= %{g}]%{=b C}[%m/%d/%y %C %A]%{W}'
+logtstamp on
+logtstamp after 1
+altscreen on
