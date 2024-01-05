@@ -75,5 +75,7 @@ test -x /opt/homebrew/bin/brew && eval $(/opt/homebrew/bin/brew shellenv)
 PATH=$HOME/local/bin:$HOME/local/sbin:$PATH
 
 # anyenv
-export PATH="$HOME/.anyenv/bin:$PATH"
-eval "$(anyenv init -)"
+if test -d $HOME/.anyenv; then
+    export PATH="$HOME/.anyenv/bin:$PATH"
+    eval "$(anyenv init -)"
+fi
