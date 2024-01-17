@@ -65,15 +65,24 @@ zstyle :compinstall filename '$HOME/.zshrc'
 if test -d $HOME/local/share/zsh/site-functions; then
     fpath=($HOME/local/share/zsh/site-functions ${fpath})
 fi
-autoload -U compinit
-compinit -u
-
-# homebrew
-test -x /opt/homebrew/bin/brew && eval $(/opt/homebrew/bin/brew shellenv)
+autoload -Uz compinit bashcompinit
+compinit
+bashcompinit
 
 # user local
 PATH=$HOME/local/bin:$HOME/local/sbin:$PATH
 
+# homebrew
+if test `whence -p brew`; then
+    eval $(brew shellenv)
+fi
+
 # anyenv
-export PATH="$HOME/.anyenv/bin:$PATH"
-eval "$(anyenv init -)"
+if test `whence -p anyenv`; then
+    eval "$(anyenv init -)"
+fi
+
+# elf2x68k
+if test -d "$HOME/src/x68k/elf2x68k/m68k-xelf/bin"; then
+    PATH="$PATH:$HOME/src/x68k/elf2x68k/m68k-xelf/bin"
+fi
