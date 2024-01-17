@@ -69,18 +69,20 @@ autoload -Uz compinit bashcompinit
 compinit
 bashcompinit
 
-# user local
-PATH=$HOME/local/bin:$HOME/local/sbin:$PATH
-
 # homebrew
-if test `whence -p brew`; then
-    eval $(brew shellenv)
+if test -x $HOME/local/bin/brew; then
+    eval $($HOME/local/bin/brew shellenv)
+elif test -x /opt/homebrew/bin/brew; then
+    eval $(/opt/homebrew/bin/brew shellenv)
 fi
 
 # anyenv
 if test `whence -p anyenv`; then
     eval "$(anyenv init -)"
 fi
+
+# user local
+PATH=$HOME/local/bin:$HOME/local/sbin:$PATH
 
 # elf2x68k
 if test -d "$HOME/src/x68k/elf2x68k/m68k-xelf/bin"; then
