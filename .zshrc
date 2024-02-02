@@ -79,6 +79,9 @@ fi
 # anyenv
 if test `whence -p anyenv`; then
     eval "$(anyenv init -)"
+elif test -d $HOME/.anyenv; then
+    PATH=$HOME/.anyenv/bin:$PATH
+    eval "$(anyenv init -)"
 fi
 
 # user local
