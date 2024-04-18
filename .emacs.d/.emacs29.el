@@ -13,7 +13,7 @@
 ;; (if (eq system-type 'windows-nt)
 ;;     (setq ls-lisp-UCA-like-collation nil))
 
-(setq custom-file "~/.emacs.d/.emacs28-custom.el")
+(setq custom-file "~/.emacs.d/.emacs29-custom.el")
 (if (file-exists-p (expand-file-name custom-file))
     (load (expand-file-name custom-file) t nil nil))
 
