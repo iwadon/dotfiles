@@ -7,3 +7,4 @@
 /.emacs.d/auto-complete
 /.emacs.d/elpa
 /.emacs.d/url
+/.emacs.d/transient
