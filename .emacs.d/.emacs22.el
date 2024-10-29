@@ -16,7 +16,7 @@
 ;  (define-key minibuffer-local-map (string tty-erase-char) 'backward-delete-char)
 ;  (setq search-delete-char tty-erase-char))
 
-(setq custom-file "~/.emacs.d/.emacs22.el")
+(setq custom-file "~/.emacs.d/.emacs22-custom.el")
 (column-number-mode t)
 (global-font-lock-mode t)
 (global-hl-line-mode t)
