@@ -90,6 +90,9 @@ if test `whence -p starship`; then
     eval "$(starship init zsh)"
 fi
 
+# user local
+PATH=$HOME/local/bin:$HOME/local/sbin:$PATH
+
 # zsh complete
 zstyle :compinstall filename '$HOME/.zshrc'
 if test -d $HOME/local/share/zsh/site-functions; then
