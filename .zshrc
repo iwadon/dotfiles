@@ -85,6 +85,11 @@ if test -d "$HOME/src/x68k/elf2x68k/m68k-xelf/bin"; then
     PATH="$PATH:$HOME/src/x68k/elf2x68k/m68k-xelf/bin"
 fi
 
+# starship
+if test `whence -p starship`; then
+    eval "$(starship init zsh)"
+fi
+
 # zsh complete
 zstyle :compinstall filename '$HOME/.zshrc'
 if test -d $HOME/local/share/zsh/site-functions; then
