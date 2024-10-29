@@ -60,15 +60,6 @@ tcsh-backward-delete-word () {
 zle -N tcsh-backward-delete-word
 bindkey '^[^?' tcsh-backward-delete-word
 
-# zsh complete
-zstyle :compinstall filename '$HOME/.zshrc'
-if test -d $HOME/local/share/zsh/site-functions; then
-    fpath=($HOME/local/share/zsh/site-functions ${fpath})
-fi
-autoload -Uz compinit bashcompinit
-compinit
-bashcompinit
-
 # homebrew
 if test -x $HOME/local/bin/brew; then
     eval $($HOME/local/bin/brew shellenv)
@@ -91,3 +82,12 @@ PATH=$HOME/local/bin:$HOME/local/sbin:$PATH
 if test -d "$HOME/src/x68k/elf2x68k/m68k-xelf/bin"; then
     PATH="$PATH:$HOME/src/x68k/elf2x68k/m68k-xelf/bin"
 fi
+
+# zsh complete
+zstyle :compinstall filename '$HOME/.zshrc'
+if test -d $HOME/local/share/zsh/site-functions; then
+    fpath=($HOME/local/share/zsh/site-functions ${fpath})
+fi
+autoload -Uz compinit bashcompinit
+compinit
+bashcompinit
