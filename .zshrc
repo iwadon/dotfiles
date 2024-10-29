@@ -75,8 +75,10 @@ elif test -d $HOME/.anyenv; then
     eval "$(anyenv init -)"
 fi
 
-# user local
-PATH=$HOME/local/bin:$HOME/local/sbin:$PATH
+# rbenv
+if test -n "$RBENV_ROOT"; then
+    fpath=($RBENV_ROOT/completions $fpath)
+fi
 
 # elf2x68k
 if test -d "$HOME/src/x68k/elf2x68k/m68k-xelf/bin"; then
