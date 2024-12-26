@@ -80,9 +80,14 @@ if test -n "$RBENV_ROOT"; then
     fpath=($RBENV_ROOT/completions $fpath)
 fi
 
-# elf2x68k
-if test -d "$HOME/src/x68k/elf2x68k/m68k-xelf/bin"; then
-    PATH="$PATH:$HOME/src/x68k/elf2x68k/m68k-xelf/bin"
+# rust
+if test -f "$HOME/.cargo/env"; then
+    . "$HOME/.cargo/env"
+fi
+
+# XDG?
+if test -d "$HOME/.local/bin"; then
+    PATH="$PATH:$HOME/.local/bin"
 fi
 
 # starship
