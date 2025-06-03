@@ -100,6 +100,11 @@ if [ "$TERM_PROGRAM" = "iTerm.app" ] && [ `whence -p starship` ]; then
     eval "$(starship init zsh)"
 fi
 
+# dotnet
+if test -d "$HOME/.dotnet"; then
+    PATH="$HOME/.dotnet:$PATH"
+fi
+
 # user local
 PATH=$HOME/local/bin:$HOME/local/sbin:$PATH
 
