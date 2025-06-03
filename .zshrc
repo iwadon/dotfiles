@@ -96,7 +96,7 @@ if test -d "$HOME/.local/bin"; then
 fi
 
 # starship
-if test `whence -p starship`; then
+if [ "$TERM_PROGRAM" = "iTerm.app" ] && [ `whence -p starship` ]; then
     eval "$(starship init zsh)"
 fi
 
