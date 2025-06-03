@@ -1,5 +1,9 @@
 # env
-PROMPT='%m:%~%# '
+if test "$TERM_PROGRAM" = "vscode"; then
+    PROMPT='%~$ '
+else
+    PROMPT='%m:%~%# '
+fi
 HISTFILE=$HOME/.zsh-history
 HISTSIZE=1000
 SAVEHIST=100000
