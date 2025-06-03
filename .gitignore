@@ -3,8 +3,11 @@
 .svn
 /.emacs.d/*.elc
 /.emacs.d/.*-custom.el
+/.emacs.d/.emacs.desktop
 /.emacs.d/ac-comphist.dat
+/.emacs.d/auto-save-list
 /.emacs.d/auto-complete
+/.emacs.d/desktops
 /.emacs.d/elpa
 /.emacs.d/url
 /.emacs.d/transient
