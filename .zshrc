@@ -116,3 +116,7 @@ fi
 autoload -Uz compinit bashcompinit
 compinit
 bashcompinit
+
+
+# The location for the automatically added settings:
+
