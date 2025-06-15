@@ -95,8 +95,35 @@ if test -d "$HOME/.local/bin"; then
     PATH="$PATH:$HOME/.local/bin"
 fi
 
-# starship
-if [ "$TERM_PROGRAM" = "iTerm.app" ] && [ `whence -p starship` ]; then
+# starship を使うべき端末条件（iTerm2, tmux, 将来の truecolor Terminal.app）
+function should_enable_starship() {
+    # VSCode では無効
+    if [[ "$TERM_PROGRAM" = "vscode" ]]; then
+        return 1
+    fi
+
+    # truecolor or 256色対応の TERM かどうか
+    case "$TERM" in
+        *-256color|*-direct)
+            ;;
+        *)
+            return 1
+            ;;
+    esac
+
+    # iTerm2 または tmux、または今後 truecolor 対応される Apple Terminal
+    if [[ "$TERM_PROGRAM" = "iTerm.app" || -n "$TMUX" ]]; then
+        return 0
+    fi
+    if [[ "$TERM_PROGRAM" = "Apple_Terminal" && "$TERM" = *-direct ]]; then
+        return 0
+    fi
+
+    return 1
+}
+
+# starship 有効化
+if should_enable_starship && command -v starship >/dev/null; then
     eval "$(starship init zsh)"
 fi
 
