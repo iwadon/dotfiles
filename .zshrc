@@ -115,7 +115,7 @@ function should_enable_starship() {
     if [[ "$TERM_PROGRAM" = "iTerm.app" || -n "$TMUX" ]]; then
         return 0
     fi
-    if [[ "$TERM_PROGRAM" = "Apple_Terminal" && "$TERM" = *-direct ]]; then
+    if [[ "$TERM_PROGRAM" = "Apple_Terminal" && "$COLORTERM" = "truecolor" ]]; then
         return 0
     fi
 
