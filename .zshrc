@@ -85,6 +85,11 @@ if test -n "$RBENV_ROOT"; then
     fpath=($RBENV_ROOT/completions $fpath)
 fi
 
+# go
+if test -d "$HOME/go/bin"; then
+    PATH="$HOME/go/bin:$PATH"
+fi
+
 # rust
 if test -f "$HOME/.cargo/env"; then
     . "$HOME/.cargo/env"
@@ -102,20 +107,8 @@ function should_enable_starship() {
         return 1
     fi
 
-    # truecolor or 256色対応の TERM かどうか
-    case "$TERM" in
-        *-256color|*-direct)
-            ;;
-        *)
-            return 1
-            ;;
-    esac
-
-    # iTerm2 または tmux、または今後 truecolor 対応される Apple Terminal
-    if [[ "$TERM_PROGRAM" = "iTerm.app" || -n "$TMUX" ]]; then
-        return 0
-    fi
-    if [[ "$TERM_PROGRAM" = "Apple_Terminal" && "$COLORTERM" = "truecolor" ]]; then
+    # 端末がtruecolor に対応しているかどうか
+    if [[ "$COLORTERM" = "truecolor" ]]; then
         return 0
     fi
 
