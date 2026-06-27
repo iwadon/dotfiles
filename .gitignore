@@ -2,6 +2,7 @@
 .emacs.d/.*-custom.el
 .emacs.d/.emacs.desktop
 .emacs.d/.emacs.desktop.lock
+.emacs.d/.lsp-session-v1
 .emacs.d/*.elc
 .emacs.d/ac-comphist.dat
 .emacs.d/auto-complete
